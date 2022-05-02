@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Instagram follow demo1</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <br/>
+            <h5>Index page</h5>
+            <div>
+                <p>Send one of these messages to user</p>
+            </div>
+            <br/>
+            <div>
+                <p>Message 1: I'm on Instagram as lepackarabia. Follow my photos and videos with this link:
+                    <a href="https://www.instagram.com/lepackarabia/">https://www.instagram.com/lepackarabia/</a>
+                </p>
+            </div>
+            <div>
+                <p>Message 2: I'm on Instagram as lepackarabia. Follow my photos and videos with this link:
+                    <a href="{% url 'demo1:invite' %}">https://www.instagram.com/web/friendships/41665980006/follow/</a>
+                     or click the button below
+                </p>
+                <form action="https://www.instagram.com/web/friendships/41665980006/follow/" method="post" name="invite-form">
+                {% csrf_token %}
+                    <button type="submit" class="btn btn-success">Follow</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
